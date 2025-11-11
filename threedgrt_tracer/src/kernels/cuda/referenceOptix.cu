@@ -126,6 +126,7 @@ extern "C" __global__ void __raygen__rg() {
     RayPayload rayPayload;
 
     while ((rayLastHitDistance <= minMaxT.y) && (rayTransmittance > params.minTransmittance)) {
+        break; // Aditi 
         trace(rayPayload, rayOrigin, rayDirection, rayLastHitDistance + epsT, minMaxT.y + epsT);
         if (rayPayload[0].particleId == RayHit::InvalidParticleId) {
             break;
